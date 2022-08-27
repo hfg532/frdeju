@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ray
+  name: kgftsd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ray
+      app: kgftsd
   template:
     metadata:
       labels:
-        app: ray
+        app: kgftsd
     spec:
       containers:
       - image: okteto.dev/ray:latest
-        name: ray
+        name: kgftsd
         ports:
         - containerPort: 8080
         env:
@@ -27,7 +27,7 @@ spec:
         - name: Vless_Path
           value: "/vl555"
         - name: Vmess_UUID
-          value: "f8bfb621-6728-4a6c-ae69-2106cd3d7c8a"
+          value: "8dc2bd5a-0574-4993-bf62-62439282fa4b"
         - name: Vmess_Path
           value: "/vm666"
         - name: Share_Path
